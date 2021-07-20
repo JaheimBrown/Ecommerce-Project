@@ -9,24 +9,22 @@ const Product = ({product}) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={product.image} title={product.name} />
+            <CardMedia className={classes.media} image={product.media.source} title={product.name} />
             <CardContent>
-                <div className={classes.CardContent}>
+                <div className={classes.cardContent}>
                     <Typography varient='h5' gutterBottom>
                         {product.name}
                     </Typography>
-                    <Typography varient='h2'>
-                        {product.price}
+                    <Typography varient='h3'>
+                        {product.price.formatted_with_symbol}
                     </Typography>
-                    <Typography varient='body2' color='textSecondary'>
-                        {product.description}
-                    </Typography>
-                    <CardActions disabledSpacing className={classes.cardActions}>
+                </div>
+                    <Typography dangerouslySetInnerHTML={{__html:product.description}} varient='body2' color='textSecondary'/>
+                    <CardActions className={classes.cardActions}>
                         <IconButton aria-label='Add to Cart'>
                             <AddShoppingCart/>
                         </IconButton>
                     </CardActions>
-                </div>
             </CardContent>
         </Card>
     )
