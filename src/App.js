@@ -26,6 +26,11 @@ function App() {
     fetchCart();
   },[])
 
+  // UPDATE CART ITEMS # UPON FUNCTION CALL
+  useEffect(() => {
+    fetchCart();
+  },[handleAddToCart])
+
   return (
     <>
       <Navbar totalItems={cart.total_items} />
