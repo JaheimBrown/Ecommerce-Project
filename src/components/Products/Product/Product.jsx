@@ -4,7 +4,7 @@ import { AddShoppingCart } from '@material-ui/icons';
 
 import useStyles from './Styles';
 
-const Product = ({product}) => {
+const Product = ({product, AddToCart}) => {
     const classes = useStyles();
 
     return (
@@ -21,7 +21,7 @@ const Product = ({product}) => {
                 </div>
                     <Typography dangerouslySetInnerHTML={{__html:product.description}} varient='body2' color='textSecondary'/>
                     <CardActions className={classes.cardActions}>
-                        <IconButton aria-label='Add to Cart'>
+                        <IconButton aria-label='Add to Cart' onClick={du => AddToCart(product.id, 1)}>
                             <AddShoppingCart/>
                         </IconButton>
                     </CardActions>
