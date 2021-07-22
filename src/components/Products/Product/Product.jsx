@@ -21,7 +21,7 @@ const Product = ({product, AddToCart}) => {
                 </div>
                     <Typography dangerouslySetInnerHTML={{__html:product.description}} varient='body2' color='textSecondary'/>
                     <CardActions className={classes.cardActions}>
-                        <IconButton aria-label='Add to Cart' onClick={du => AddToCart(product.id, 1)}>
+                        <IconButton aria-label='Add to Cart' onClick={() => AddToCart(product.id, 1)}>
                             <AddShoppingCart/>
                         </IconButton>
                     </CardActions>
