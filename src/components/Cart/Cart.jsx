@@ -28,7 +28,7 @@ const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdateCart })
                     </Typography>
                     <div> 
                         <Button className={classes.emptyButton} size="large" color="secondary" type="button" variant="contained" onClick={()=>handleEmptyCart()}>Empty Cart</Button>
-                        <Button className={classes.ckeckoutButton} size="large" color="primary" type="button" variant="contained">Checkout</Button>
+                        <Button className={classes.ckeckoutButton} size="large" color="primary" type="button" variant="contained" component={Link} to='/checkout'>Checkout</Button>
                     </div>
             </div>
         </>
