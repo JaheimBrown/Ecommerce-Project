@@ -38,7 +38,6 @@ function App() {
     const {cart} = await commerce.cart.remove(itemId);
     setCart(cart);
   }
-  console.log(cart);
 
   useEffect(() => {
     fetchProducts();
@@ -64,7 +63,7 @@ function App() {
                 handleRemoveFromCart ={handleRemoveFromCart} />
           </Route>
           <Route exact path='/checkout'>
-            <Checkout />
+            <Checkout cart={cart} />
           </Route>
         </Switch>
       </>
